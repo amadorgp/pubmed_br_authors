@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+env/
+
+# VS Code / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Data (não versionar)
+data/raw/
+data/processed/
+data/sandbox/
+
+# Runs (logs, manifests, checkpoints)
+runs/
+
+# Power BI
+*.pbix
+*.pbit
+
+# Documentos binários
+*.docx
+*.pdf
+
+# Outros
+*.log
+*.tmp
