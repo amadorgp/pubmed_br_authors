@@ -49,6 +49,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--project-root", required=True)
     p.add_argument("--articles-csv", default="data/processed/articles_all.csv")
     p.add_argument("--authors-csv", default="data/processed/author_occurrences_all.csv")
+    p.add_argument("--articles-unique-csv", default="data/processed/articles_unique.csv")
+    p.add_argument("--authors-unique-csv", default="data/processed/author_occurrences_unique.csv")
     return p.parse_args()
 
 
@@ -104,11 +106,24 @@ def main() -> None:
 
     articles = pd.read_csv(root / args.articles_csv, low_memory=False)
     authors = pd.read_csv(root / args.authors_csv, low_memory=False)
+    articles_unique = pd.read_csv(root / args.articles_unique_csv, low_memory=False)
+    authors_unique = pd.read_csv(root / args.authors_unique_csv, low_memory=False)
 
     dd_articles = build_dictionary(articles, "articles_all")
     dd_authors = build_dictionary(authors, "author_occurrences_all")
+    dd_articles_unique = build_dictionary(articles_unique, "articles_unique")
+    dd_authors_unique = build_dictionary(authors_unique, "author_occurrences_unique")
 
-    data_dictionary = pd.concat([dd_articles, dd_authors], ignore_index=True)
+    data_dictionary = pd.concat(
+        [
+            dd_articles,
+            dd_articles_unique,
+            dd_authors,
+            dd_authors_unique,
+        ],
+        ignore_index=True
+    )
+
 
     csv_path = docs_dir / "data_dictionary.csv"
     md_path = docs_dir / "data_dictionary.md"
