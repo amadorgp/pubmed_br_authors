@@ -1,72 +1,403 @@
 # Data Dictionary
 
+_Generated at: 2026-02-03 19:03:59_
+
+## Datasets Summary
+
+| dataset | rel_path | n_rows | n_cols |
+| --- | --- | --- | --- |
+| articles_2020 | data/processed/articles_2020.csv | 9999 | 11 |
+| articles_2021 | data/processed/articles_2021.csv | 9999 | 11 |
+| articles_2022 | data/processed/articles_2022.csv | 9999 | 11 |
+| articles_2023 | data/processed/articles_2023.csv | 9999 | 11 |
+| articles_2024 | data/processed/articles_2024.csv | 9999 | 11 |
+| articles_all | data/processed/articles_all.csv | 49995 | 11 |
+| articles_unique | data/processed/articles_unique.csv | 49734 | 11 |
+| author_blockkey_cluster_map_n2 | data/processed/author_blockkey_cluster_map_n2.csv | 214824 | 3 |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | 78655 | 14 |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | 87354 | 14 |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | 87545 | 14 |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | 89090 | 14 |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | 89110 | 14 |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | 431754 | 14 |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | 430312 | 23 |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | 430312 | 28 |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | 430312 | 30 |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | 430312 | 14 |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | 209468 | 12 |
+| mart_leads_authors__sources | data/processed/mart_leads_authors__sources.csv | 209467 | 3 |
+
+## Dataset: `articles_2020`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| articles_2020 | data/processed/articles_2020.csv | journal | str | categorical | False | 2149 | 0 | 0.0 |  |
+| articles_2020 | data/processed/articles_2020.csv | publication_types | str | categorical | False | 209 | 0 | 0.0 |  |
+| articles_2020 | data/processed/articles_2020.csv | abstract | str | free_text | True | 8810 | 1184 | 0.11841184118411842 |  |
+| articles_2020 | data/processed/articles_2020.csv | article_title | str | free_text | False | 9985 | 0 | 0.0 |  |
+| articles_2020 | data/processed/articles_2020.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2020 | data/processed/articles_2020.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2020 | data/processed/articles_2020.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2020 | data/processed/articles_2020.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| articles_2020 | data/processed/articles_2020.csv | doi | str | identifier_optional | True | 9927 | 71 | 0.007100710071007101 |  |
+| articles_2020 | data/processed/articles_2020.csv | pmid | int64 | primary_identifier | False | 9999 | 0 | 0.0 |  |
+| articles_2020 | data/processed/articles_2020.csv | pub_year | int64 | temporal | False | 5 | 0 | 0.0 |  |
+
+## Dataset: `articles_2021`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| articles_2021 | data/processed/articles_2021.csv | journal | str | categorical | False | 2163 | 0 | 0.0 |  |
+| articles_2021 | data/processed/articles_2021.csv | publication_types | str | categorical | False | 207 | 0 | 0.0 |  |
+| articles_2021 | data/processed/articles_2021.csv | abstract | str | free_text | True | 8781 | 1213 | 0.12131213121312132 |  |
+| articles_2021 | data/processed/articles_2021.csv | article_title | str | free_text | False | 9952 | 0 | 0.0 |  |
+| articles_2021 | data/processed/articles_2021.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2021 | data/processed/articles_2021.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2021 | data/processed/articles_2021.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2021 | data/processed/articles_2021.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| articles_2021 | data/processed/articles_2021.csv | doi | str | identifier_optional | True | 9945 | 50 | 0.005000500050005001 |  |
+| articles_2021 | data/processed/articles_2021.csv | pmid | int64 | primary_identifier | False | 9999 | 0 | 0.0 |  |
+| articles_2021 | data/processed/articles_2021.csv | pub_year | int64 | temporal | False | 4 | 0 | 0.0 |  |
+
+## Dataset: `articles_2022`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| articles_2022 | data/processed/articles_2022.csv | journal | str | categorical | False | 2157 | 0 | 0.0 |  |
+| articles_2022 | data/processed/articles_2022.csv | publication_types | str | categorical | False | 231 | 0 | 0.0 |  |
+| articles_2022 | data/processed/articles_2022.csv | abstract | str | free_text | True | 8976 | 1020 | 0.10201020102010201 |  |
+| articles_2022 | data/processed/articles_2022.csv | article_title | str | free_text | False | 9985 | 0 | 0.0 |  |
+| articles_2022 | data/processed/articles_2022.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2022 | data/processed/articles_2022.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2022 | data/processed/articles_2022.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2022 | data/processed/articles_2022.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| articles_2022 | data/processed/articles_2022.csv | doi | str | identifier_optional | True | 9948 | 47 | 0.0047004700470047005 |  |
+| articles_2022 | data/processed/articles_2022.csv | pmid | int64 | primary_identifier | False | 9999 | 0 | 0.0 |  |
+| articles_2022 | data/processed/articles_2022.csv | pub_year | int64 | temporal | False | 4 | 0 | 0.0 |  |
+
+## Dataset: `articles_2023`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| articles_2023 | data/processed/articles_2023.csv | journal | str | categorical | False | 2193 | 0 | 0.0 |  |
+| articles_2023 | data/processed/articles_2023.csv | publication_types | str | categorical | False | 258 | 0 | 0.0 |  |
+| articles_2023 | data/processed/articles_2023.csv | abstract | str | free_text | True | 9016 | 981 | 0.09810981098109811 |  |
+| articles_2023 | data/processed/articles_2023.csv | article_title | str | free_text | False | 9991 | 0 | 0.0 |  |
+| articles_2023 | data/processed/articles_2023.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2023 | data/processed/articles_2023.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2023 | data/processed/articles_2023.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2023 | data/processed/articles_2023.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| articles_2023 | data/processed/articles_2023.csv | doi | str | identifier_optional | True | 9970 | 29 | 0.0029002900290029 |  |
+| articles_2023 | data/processed/articles_2023.csv | pmid | int64 | primary_identifier | False | 9999 | 0 | 0.0 |  |
+| articles_2023 | data/processed/articles_2023.csv | pub_year | int64 | temporal | False | 5 | 0 | 0.0 |  |
+
+## Dataset: `articles_2024`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| articles_2024 | data/processed/articles_2024.csv | journal | str | categorical | False | 2166 | 0 | 0.0 |  |
+| articles_2024 | data/processed/articles_2024.csv | publication_types | str | categorical | False | 225 | 0 | 0.0 |  |
+| articles_2024 | data/processed/articles_2024.csv | abstract | str | free_text | True | 9414 | 585 | 0.05850585058505851 |  |
+| articles_2024 | data/processed/articles_2024.csv | article_title | str | free_text | False | 9993 | 0 | 0.0 |  |
+| articles_2024 | data/processed/articles_2024.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2024 | data/processed/articles_2024.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2024 | data/processed/articles_2024.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_2024 | data/processed/articles_2024.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| articles_2024 | data/processed/articles_2024.csv | doi | str | identifier_optional | True | 9969 | 29 | 0.0029002900290029 |  |
+| articles_2024 | data/processed/articles_2024.csv | pmid | int64 | primary_identifier | False | 9999 | 0 | 0.0 |  |
+| articles_2024 | data/processed/articles_2024.csv | pub_year | int64 | temporal | False | 4 | 0 | 0.0 |  |
+
 ## Dataset: `articles_all`
 
-| column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| pmid | int64 | primary_identifier | False | 49734 | 0 | 0.0 |  |
-| pub_year | int64 | temporal | False | 7 | 0 | 0.0 |  |
-| journal | str | categorical | False | 3711 | 0 | 0.0 |  |
-| article_title | str | free_text | False | 49632 | 0 | 0.0 |  |
-| doi | str | identifier_optional | True | 49495 | 226 | 0.00452045204520452 |  |
-| publication_types | str | categorical | False | 583 | 0 | 0.0 |  |
-| abstract | str | free_text | True | 44735 | 4983 | 0.09966996699669967 |  |
-| xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
-| extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
-| strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
-| source | str | governance | False | 1 | 0 | 0.0 |  |
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| articles_all | data/processed/articles_all.csv | journal | str | categorical | False | 3711 | 0 | 0.0 |  |
+| articles_all | data/processed/articles_all.csv | publication_types | str | categorical | False | 583 | 0 | 0.0 |  |
+| articles_all | data/processed/articles_all.csv | abstract | str | free_text | True | 44735 | 4983 | 0.09966996699669967 |  |
+| articles_all | data/processed/articles_all.csv | article_title | str | free_text | False | 49632 | 0 | 0.0 |  |
+| articles_all | data/processed/articles_all.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_all | data/processed/articles_all.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_all | data/processed/articles_all.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_all | data/processed/articles_all.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| articles_all | data/processed/articles_all.csv | doi | str | identifier_optional | True | 49495 | 226 | 0.00452045204520452 |  |
+| articles_all | data/processed/articles_all.csv | pmid | int64 | primary_identifier | False | 49734 | 0 | 0.0 |  |
+| articles_all | data/processed/articles_all.csv | pub_year | int64 | temporal | False | 7 | 0 | 0.0 |  |
 
 ## Dataset: `articles_unique`
 
-| column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| pmid | int64 | primary_identifier | False | 49734 | 0 | 0.0 |  |
-| pub_year | int64 | temporal | False | 7 | 0 | 0.0 |  |
-| journal | str | categorical | False | 3711 | 0 | 0.0 |  |
-| article_title | str | free_text | False | 49632 | 0 | 0.0 |  |
-| doi | str | identifier_optional | True | 49495 | 226 | 0.004544175011058833 |  |
-| publication_types | str | categorical | False | 583 | 0 | 0.0 |  |
-| abstract | str | free_text | True | 44735 | 4981 | 0.10015281296497366 |  |
-| xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
-| extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
-| strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
-| source | str | governance | False | 1 | 0 | 0.0 |  |
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| articles_unique | data/processed/articles_unique.csv | journal | str | categorical | False | 3711 | 0 | 0.0 |  |
+| articles_unique | data/processed/articles_unique.csv | publication_types | str | categorical | False | 583 | 0 | 0.0 |  |
+| articles_unique | data/processed/articles_unique.csv | abstract | str | free_text | True | 44735 | 4981 | 0.10015281296497366 |  |
+| articles_unique | data/processed/articles_unique.csv | article_title | str | free_text | False | 49632 | 0 | 0.0 |  |
+| articles_unique | data/processed/articles_unique.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_unique | data/processed/articles_unique.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_unique | data/processed/articles_unique.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| articles_unique | data/processed/articles_unique.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| articles_unique | data/processed/articles_unique.csv | doi | str | identifier_optional | True | 49495 | 226 | 0.004544175011058833 |  |
+| articles_unique | data/processed/articles_unique.csv | pmid | int64 | primary_identifier | False | 49734 | 0 | 0.0 |  |
+| articles_unique | data/processed/articles_unique.csv | pub_year | int64 | temporal | False | 7 | 0 | 0.0 |  |
+
+## Dataset: `author_blockkey_cluster_map_n2`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| author_blockkey_cluster_map_n2 | data/processed/author_blockkey_cluster_map_n2.csv | author_cluster_id | str | derived_identifier | False | 209467 | 0 | 0.0 |  |
+| author_blockkey_cluster_map_n2 | data/processed/author_blockkey_cluster_map_n2.csv | block_key | str | derived_identifier | False | 214824 | 0 | 0.0 |  |
+| author_blockkey_cluster_map_n2 | data/processed/author_blockkey_cluster_map_n2.csv | author_cluster_size | int64 | metric | False | 10 | 0 | 0.0 |  |
+
+## Dataset: `author_occurrences_2020`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | author_role | str | categorical | False | 3 | 0 | 0.0 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | journal | str | categorical | False | 2149 | 0 | 0.0 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | affiliation_raw | str | free_text | True | 46411 | 774 | 0.009840442438497235 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | article_title | str | free_text | False | 9985 | 0 | 0.0 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | author_name_raw | str | free_text | False | 63403 | 0 | 0.0 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | doi | str | identifier_optional | True | 9927 | 480 | 0.00610259996185875 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | orcid | str | identifier_optional | True | 16336 | 58664 | 0.7458394253385036 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | author_position | int64 | ordinal | False | 697 | 0 | 0.0 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | pmid | int64 | primary_identifier | False | 9999 | 0 | 0.0 |  |
+| author_occurrences_2020 | data/processed/author_occurrences_2020.csv | pub_year | int64 | temporal | False | 5 | 0 | 0.0 |  |
+
+## Dataset: `author_occurrences_2021`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | author_role | str | categorical | False | 3 | 0 | 0.0 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | journal | str | categorical | False | 2163 | 0 | 0.0 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | affiliation_raw | str | free_text | True | 49693 | 547 | 0.006261876960413948 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | article_title | str | free_text | False | 9952 | 0 | 0.0 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | author_name_raw | str | free_text | False | 67652 | 0 | 0.0 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | doi | str | identifier_optional | True | 9945 | 292 | 0.0033427204249376103 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | orcid | str | identifier_optional | True | 21652 | 60481 | 0.6923666918515465 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | author_position | int64 | ordinal | False | 460 | 0 | 0.0 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | pmid | int64 | primary_identifier | False | 9999 | 0 | 0.0 |  |
+| author_occurrences_2021 | data/processed/author_occurrences_2021.csv | pub_year | int64 | temporal | False | 4 | 0 | 0.0 |  |
+
+## Dataset: `author_occurrences_2022`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | author_role | str | categorical | False | 3 | 0 | 0.0 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | journal | str | categorical | False | 2157 | 0 | 0.0 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | affiliation_raw | str | free_text | True | 51928 | 849 | 0.009697869667028385 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | article_title | str | free_text | False | 9985 | 0 | 0.0 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | author_name_raw | str | free_text | False | 71335 | 0 | 0.0 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | doi | str | identifier_optional | True | 9948 | 230 | 0.002627220286709692 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | orcid | str | identifier_optional | True | 22066 | 60184 | 0.6874635901536352 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | author_position | int64 | ordinal | False | 402 | 0 | 0.0 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | pmid | int64 | primary_identifier | False | 9999 | 0 | 0.0 |  |
+| author_occurrences_2022 | data/processed/author_occurrences_2022.csv | pub_year | int64 | temporal | False | 4 | 0 | 0.0 |  |
+
+## Dataset: `author_occurrences_2023`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | author_role | str | categorical | False | 3 | 0 | 0.0 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | journal | str | categorical | False | 2193 | 0 | 0.0 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | affiliation_raw | str | free_text | True | 53758 | 735 | 0.008250084184532495 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | article_title | str | free_text | False | 9991 | 0 | 0.0 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | author_name_raw | str | free_text | False | 72137 | 0 | 0.0 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | doi | str | identifier_optional | True | 9970 | 236 | 0.0026490066225165563 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | orcid | str | identifier_optional | True | 22332 | 61284 | 0.6878886519250197 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | author_position | int64 | ordinal | False | 285 | 0 | 0.0 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | pmid | int64 | primary_identifier | False | 9999 | 0 | 0.0 |  |
+| author_occurrences_2023 | data/processed/author_occurrences_2023.csv | pub_year | int64 | temporal | False | 5 | 0 | 0.0 |  |
+
+## Dataset: `author_occurrences_2024`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | author_role | str | categorical | False | 3 | 0 | 0.0 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | journal | str | categorical | False | 2166 | 0 | 0.0 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | affiliation_raw | str | free_text | True | 52304 | 711 | 0.0079789024800808 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | article_title | str | free_text | False | 9993 | 0 | 0.0 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | author_name_raw | str | free_text | False | 69763 | 0 | 0.0 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | doi | str | identifier_optional | True | 9969 | 177 | 0.0019863090562226462 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | orcid | str | identifier_optional | True | 22917 | 59991 | 0.6732241050387162 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | author_position | int64 | ordinal | False | 259 | 0 | 0.0 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | pmid | int64 | primary_identifier | False | 9999 | 0 | 0.0 |  |
+| author_occurrences_2024 | data/processed/author_occurrences_2024.csv | pub_year | int64 | temporal | False | 4 | 0 | 0.0 |  |
 
 ## Dataset: `author_occurrences_all`
 
-| column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| pmid | int64 | primary_identifier | False | 49734 | 0 | 0.0 |  |
-| pub_year | int64 | temporal | False | 7 | 0 | 0.0 |  |
-| journal | str | categorical | False | 3711 | 0 | 0.0 |  |
-| article_title | str | free_text | False | 49632 | 0 | 0.0 |  |
-| doi | str | identifier_optional | True | 49495 | 1415 | 0.003277329219879839 |  |
-| author_position | int64 | ordinal | False | 697 | 0 | 0.0 |  |
-| author_role | str | categorical | False | 3 | 0 | 0.0 |  |
-| author_name_raw | str | free_text | False | 263357 | 0 | 0.0 |  |
-| orcid | str | identifier_optional | True | 77900 | 300604 | 0.696239062058487 |  |
-| affiliation_raw | str | free_text | True | 237332 | 3616 | 0.00837513954705689 |  |
-| xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
-| extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
-| strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
-| source | str | governance | False | 1 | 0 | 0.0 |  |
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | author_role | str | categorical | False | 3 | 0 | 0.0 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | journal | str | categorical | False | 3711 | 0 | 0.0 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | affiliation_raw | str | free_text | True | 237332 | 3616 | 0.00837513954705689 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | article_title | str | free_text | False | 49632 | 0 | 0.0 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | author_name_raw | str | free_text | False | 263357 | 0 | 0.0 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | doi | str | identifier_optional | True | 49495 | 1415 | 0.003277329219879839 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | orcid | str | identifier_optional | True | 77900 | 300604 | 0.696239062058487 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | author_position | int64 | ordinal | False | 697 | 0 | 0.0 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | pmid | int64 | primary_identifier | False | 49734 | 0 | 0.0 |  |
+| author_occurrences_all | data/processed/author_occurrences_all.csv | pub_year | int64 | temporal | False | 7 | 0 | 0.0 |  |
+
+## Dataset: `author_occurrences_enriched`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | affiliation_state_extracted | str | categorical | True | 27 | 177836 | 0.41327223038167654 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | author_role | str | categorical | False | 3 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | journal | str | categorical | False | 3711 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | block_key | str | derived_identifier | True | 214832 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | author_name_ascii | str | derived_text | False | 257469 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | author_name_clean | str | derived_text | False | 255777 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | first_name_norm | str | derived_text | True | 29291 | 1295 | 0.003009444310174943 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | initials_norm | str | derived_text | True | 16688 | 1282 | 0.002979233672312183 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | last_name_norm | str | derived_text | True | 97662 | 1277 | 0.002967614196211121 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | affiliation_raw | str | free_text | True | 237332 | 3599 | 0.008363698897544108 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | article_title | str | free_text | False | 49632 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | author_name_raw | str | free_text | False | 263357 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | doi | str | identifier_optional | True | 49495 | 1415 | 0.0032883117366004203 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | email_extracted | str | identifier_optional | True | 24546 | 394056 | 0.9157448548959825 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | orcid | str | identifier_optional | True | 77900 | 300168 | 0.697558980460689 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | author_position | int64 | ordinal | False | 697 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | pmid | int64 | primary_identifier | False | 49734 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | name_parse_ok | bool | quality_flag | False | 2 | 0 | 0.0 |  |
+| author_occurrences_enriched | data/processed/author_occurrences_enriched.csv | pub_year | int64 | temporal | False | 7 | 0 | 0.0 |  |
+
+## Dataset: `author_occurrences_enriched_n2`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | affiliation_state_extracted | str | categorical | True | 27 | 177836 | 0.41327223038167654 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | author_role | str | categorical | False | 3 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | journal | str | categorical | False | 3711 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | n2_tier | str | categorical | True | 3 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | block_key | str | derived_identifier | True | 214832 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | author_name_ascii | str | derived_text | False | 257469 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | author_name_clean | str | derived_text | False | 255777 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | first_name_norm | str | derived_text | True | 29291 | 1295 | 0.003009444310174943 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | initials_norm | str | derived_text | True | 16688 | 1282 | 0.002979233672312183 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | last_name_norm | str | derived_text | True | 97662 | 1277 | 0.002967614196211121 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | affiliation_raw | str | free_text | True | 237332 | 3599 | 0.008363698897544108 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | article_title | str | free_text | False | 49632 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | author_name_raw | str | free_text | False | 263357 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | doi | str | identifier_optional | True | 49495 | 1415 | 0.0032883117366004203 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | email_extracted | str | identifier_optional | True | 24546 | 394056 | 0.9157448548959825 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | orcid | str | identifier_optional | True | 77900 | 300168 | 0.697558980460689 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | n2_mean_coauthors_per_article | float64 | metric | True | 3958 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | n2_n_articles | float64 | metric | True | 95 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | n2_n_coauthor_edges | float64 | metric | True | 1056 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | n2_n_unique_coauthors | float64 | metric | True | 839 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | author_position | int64 | ordinal | False | 697 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | pmid | int64 | primary_identifier | False | 49734 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | name_parse_ok | bool | quality_flag | False | 2 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | pub_year | int64 | temporal | False | 7 | 0 | 0.0 |  |
+
+## Dataset: `author_occurrences_enriched_n2_resolved`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | affiliation_state_extracted | str | categorical | True | 27 | 177836 | 0.41327223038167654 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | author_role | str | categorical | False | 3 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | journal | str | categorical | False | 3711 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | n2_tier | str | categorical | True | 3 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | author_cluster_id | str | derived_identifier | True | 209467 | 1289 | 0.0029955009388536688 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | block_key | str | derived_identifier | True | 214832 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | author_name_ascii | str | derived_text | False | 257469 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | author_name_clean | str | derived_text | False | 255777 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | first_name_norm | str | derived_text | True | 29291 | 1295 | 0.003009444310174943 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | initials_norm | str | derived_text | True | 16688 | 1282 | 0.002979233672312183 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | last_name_norm | str | derived_text | True | 97662 | 1277 | 0.002967614196211121 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | affiliation_raw | str | free_text | True | 237332 | 3599 | 0.008363698897544108 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | article_title | str | free_text | False | 49632 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | author_name_raw | str | free_text | False | 263357 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | doi | str | identifier_optional | True | 49495 | 1415 | 0.0032883117366004203 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | email_extracted | str | identifier_optional | True | 24546 | 394056 | 0.9157448548959825 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | orcid | str | identifier_optional | True | 77900 | 300168 | 0.697558980460689 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | author_cluster_size | float64 | metric | True | 10 | 1289 | 0.0029955009388536688 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | n2_mean_coauthors_per_article | float64 | metric | True | 3958 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | n2_n_articles | float64 | metric | True | 95 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | n2_n_coauthor_edges | float64 | metric | True | 1056 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | n2_n_unique_coauthors | float64 | metric | True | 839 | 1280 | 0.002974585881871758 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | author_position | int64 | ordinal | False | 697 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | pmid | int64 | primary_identifier | False | 49734 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | name_parse_ok | bool | quality_flag | False | 2 | 0 | 0.0 |  |
+| author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | pub_year | int64 | temporal | False | 7 | 0 | 0.0 |  |
 
 ## Dataset: `author_occurrences_unique`
 
-| column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| pmid | int64 | primary_identifier | False | 49734 | 0 | 0.0 |  |
-| pub_year | int64 | temporal | False | 7 | 0 | 0.0 |  |
-| journal | str | categorical | False | 3711 | 0 | 0.0 |  |
-| article_title | str | free_text | False | 49632 | 0 | 0.0 |  |
-| doi | str | identifier_optional | True | 49495 | 1415 | 0.0032883117366004203 |  |
-| author_position | int64 | ordinal | False | 697 | 0 | 0.0 |  |
-| author_role | str | categorical | False | 3 | 0 | 0.0 |  |
-| author_name_raw | str | free_text | False | 263357 | 0 | 0.0 |  |
-| orcid | str | identifier_optional | True | 77900 | 300168 | 0.697558980460689 |  |
-| affiliation_raw | str | free_text | True | 237332 | 3599 | 0.008363698897544108 |  |
-| xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
-| extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
-| strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
-| source | str | governance | False | 1 | 0 | 0.0 |  |
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | author_role | str | categorical | False | 3 | 0 | 0.0 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | journal | str | categorical | False | 3711 | 0 | 0.0 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | affiliation_raw | str | free_text | True | 237332 | 3599 | 0.008363698897544108 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | article_title | str | free_text | False | 49632 | 0 | 0.0 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | author_name_raw | str | free_text | False | 263357 | 0 | 0.0 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | extraction_date | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | strategy_id | str | governance | False | 1 | 0 | 0.0 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | xml_source_file | str | governance | False | 100 | 0 | 0.0 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | doi | str | identifier_optional | True | 49495 | 1415 | 0.0032883117366004203 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | orcid | str | identifier_optional | True | 77900 | 300168 | 0.697558980460689 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | author_position | int64 | ordinal | False | 697 | 0 | 0.0 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | pmid | int64 | primary_identifier | False | 49734 | 0 | 0.0 |  |
+| author_occurrences_unique | data/processed/author_occurrences_unique.csv | pub_year | int64 | temporal | False | 7 | 0 | 0.0 |  |
+
+## Dataset: `mart_leads_authors`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | source_example | str | categorical | False | 1 | 0 | 0.0 |  |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | state_example | str | categorical | True | 27 | 91486 | 0.43675406267305744 |  |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | author_cluster_id | str | derived_identifier | True | 209467 | 1 | 4.773998892432257e-06 |  |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | block_key_example | str | derived_text | False | 209468 | 0 | 0.0 |  |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | any_br_affiliation | bool | flag | False | 2 | 0 | 0.0 |  |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | any_email | bool | flag | False | 2 | 0 | 0.0 |  |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | any_first_author | bool | flag | False | 2 | 0 | 0.0 |  |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | canonical_author_name | str | free_text | False | 209468 | 0 | 0.0 |  |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | email_example | str | identifier_optional | True | 22754 | 183964 | 0.8782439322474077 |  |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | author_cluster_size | float64 | metric | True | 10 | 1 | 4.773998892432257e-06 |  |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | n_articles | int64 | metric | False | 111 | 0 | 0.0 |  |
+| mart_leads_authors | data/processed/mart_leads_authors.csv | n_occurrences | int64 | metric | False | 110 | 0 | 0.0 |  |
+
+## Dataset: `mart_leads_authors__sources`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| mart_leads_authors__sources | data/processed/mart_leads_authors__sources.csv | author_cluster_id | str | derived_identifier | False | 209467 | 0 | 0.0 |  |
+| mart_leads_authors__sources | data/processed/mart_leads_authors__sources.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
+| mart_leads_authors__sources | data/processed/mart_leads_authors__sources.csv | n_articles_by_source | int64 | metric | False | 110 | 0 | 0.0 |  |
 

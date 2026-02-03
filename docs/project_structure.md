@@ -33,6 +33,7 @@ runs
 runs/checkpoints
 runs/logs
 runs/manifests
+runs/profiling
 src
 src/_sandbox
 ```
@@ -41,9 +42,8 @@ src/_sandbox
 
 ```text
 .gitignore
-Projeto Técnico — Pipeline Reprodutível para Mapeamento de Autores Brasileiros no PubMed (2020–2024) - v02.docx
+1).sum())
 Projeto Técnico — Pipeline Reprodutível para Mapeamento de Autores Brasileiros no PubMed (2020–2024) - v03.docx
-Projeto Técnico — Pipeline Reprodutível para Mapeamento de Autores Brasileiros no PubMed (2020–2024).docx
 README.md
 config/settings.env
 data/analysis/pubmed_prospeccao_bi.pbix
@@ -54,6 +54,7 @@ data/processed/articles_2023.csv
 data/processed/articles_2024.csv
 data/processed/articles_all.csv
 data/processed/articles_unique.csv
+data/processed/author_blockkey_cluster_map_n2.csv
 data/processed/author_occurrences_2020.csv
 data/processed/author_occurrences_2021.csv
 data/processed/author_occurrences_2022.csv
@@ -61,7 +62,11 @@ data/processed/author_occurrences_2023.csv
 data/processed/author_occurrences_2024.csv
 data/processed/author_occurrences_all.csv
 data/processed/author_occurrences_enriched.csv
+data/processed/author_occurrences_enriched_n2.csv
+data/processed/author_occurrences_enriched_n2_resolved.csv
 data/processed/author_occurrences_unique.csv
+data/processed/mart_leads_authors.csv
+data/processed/mart_leads_authors__sources.csv
 data/raw/efetch_by_year/2020/20260127_210545_A1_v2_2020_2024_no_trials_EFETCH_BY_YEAR_batch_00000.xml
 data/raw/efetch_by_year/2020/20260127_210545_A1_v2_2020_2024_no_trials_EFETCH_BY_YEAR_batch_00001.xml
 data/raw/efetch_by_year/2020/20260127_210545_A1_v2_2020_2024_no_trials_EFETCH_BY_YEAR_batch_00002.xml
@@ -871,6 +876,7 @@ data/sandbox/inspect_authors_duplicate_columns.txt
 docs/data_dictionary/data_dictionary.csv
 docs/data_dictionary/data_dictionary.md
 docs/pipeline_decisions.md
+docs/project_structure.md
 requirements.txt
 runs/checkpoints/20260128_180508_4fe36763_articles_pmid_duplicates.csv
 runs/checkpoints/20260128_181144_14330d46_articles_pmid_duplicates.csv
@@ -898,6 +904,10 @@ runs/logs/20260128_182326_af65958d_validate_processed_csvs.log
 runs/logs/20260128_182400_e81b1447_validate_processed_csvs.log
 runs/logs/20260128_194510_eb008d7a_build_articles_unique.log
 runs/logs/20260128_200838_7ca4b53c_build_author_occurrences_unique.log
+runs/logs/20260203_162839_78aff079_98_build_author_coauthors_n2.log
+runs/logs/20260203_182232_21989ceb_99_resolve_block_keys_by_coauthors_n2.log
+runs/logs/20260203_183652_e55164ca_100_build_mart_leads_authors.log
+runs/logs/20260203_184220_675800e0_100_build_mart_leads_authors.log
 runs/manifests/20260127_175139_ENV_CHECK.json
 runs/manifests/20260127_181715_A_BUILDQUERY.json
 runs/manifests/20260127_193359_A1_v2_2020_2024_no_trials_BUILDQUERY.json
@@ -910,6 +920,17 @@ runs/manifests/20260128_181144_14330d46_validate_processed_csvs.json
 runs/manifests/20260128_182400_e81b1447_validate_processed_csvs.json
 runs/manifests/20260128_194510_eb008d7a_build_articles_unique.json
 runs/manifests/20260128_200838_7ca4b53c_build_author_occurrences_unique.json
+runs/manifests/20260203_162839_78aff079_98_build_author_coauthors_n2.json
+runs/manifests/20260203_182232_21989ceb_99_resolve_block_keys_by_coauthors_n2.json
+runs/manifests/20260203_184220_675800e0_100_build_mart_leads_authors.json
+runs/profiling/author_occurrences_enriched__profile.txt
+runs/profiling/names_n1__profile.txt
+runs/profiling/names_n1__samples__parse_fail.csv
+runs/profiling/names_n1__samples__parse_ok.csv
+runs/profiling/names_n1__top_block_keys.csv
+runs/profiling/samples__emails_present.csv
+runs/profiling/samples__states_present.csv
+runs/profiling/samples__states_present__no_brazil_keyword.csv
 src/00_validate_env.py
 src/01_build_query.py
 src/02_esearch_pmids.py
@@ -917,13 +938,18 @@ src/02b_esearch_pmids_by_year.py
 src/03_efetch_xml_by_year.py
 src/04_parse_xml_to_csv_by_year.py
 src/05_merge_csvs.py
+src/100_build_mart_leads_authors.py
 src/90_validate_processed_csvs.py
 src/91_export_data_dictionary.py
 src/92_build_articles_unique.py
 src/93_build_author_occurrences_unique.py
+src/94_enrich_author_occurrences_sandbox.py
+src/95_profile_author_occurrences_enriched.py
+src/96_enrich_author_names_n1.py
+src/97_profile_author_names_n1.py
+src/98_build_author_coauthors_n2.py
+src/99_resolve_block_keys_by_coauthors_n2.py
 src/_sandbox/10_snapshot_project_structure.py
-src/_sandbox/94_enrich_author_occurrences_sandbox.py
-src/_sandbox/95_profile_author_occurrences_enriched.py
 src/_sandbox/build_articles_unique.py
 src/_sandbox/compare_articles_unique_methods.py
 src/_sandbox/diagnose_author_occurrences_duplicates.py

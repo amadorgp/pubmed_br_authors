@@ -338,3 +338,191 @@ strategies in future stages.
 - `name_parse_ok`
 
 These columns are considered **stable artifacts** of Stage N1.
+### Stage N2 (Revised) — Coauthor-based identity resolution (conservative, auditável)
+
+Objective
+Resolve residual author name ambiguity exposed in Stage N1 by assigning a practical, auditável author identity, using coauthorship structure as the sole resolution signal, while preserving reversibility and traceability.
+
+This stage represents a controlled transition from exploratory grouping to a usable author-level identity required for downstream lead generation.
+
+Key Design Decision (Explicit)
+
+At this stage, a global analytical author identifier is introduced:
+
+author_cluster_id
+
+This identifier is:
+
+derived deterministically
+
+conservative by construction
+
+auditável and reversible
+
+sufficient for business and BI consumption, but not claimed as perfect author disambiguation
+
+False negatives are explicitly accepted. False positives are treated as the primary risk to avoid.
+
+Inputs
+
+Dataset:
+
+author_occurrences_enriched_n2_resolved.csv
+
+Key columns:
+
+pmid
+
+block_key
+
+last_name_norm
+
+first_name_norm
+
+coauthor block keys (derived from shared PMIDs)
+
+Resolution Strategy (Coauthorship-Only, Name-Constrained)
+
+Candidate author identities are evaluated only within name neighborhoods, defined by:
+
+same last_name_norm
+
+same first_name_norm
+
+No cross-name matching is allowed.
+
+Within each neighborhood, two block_key values are considered to represent the same author if:
+
+they share ≥ 2 distinct coauthors, across any number of PMIDs
+
+Coauthors are identified exclusively by their own block_key values.
+
+This rule is intentionally:
+
+simple
+
+deterministic
+
+transparent
+
+conservative
+
+Group Construction Logic
+
+Candidate matches form an undirected graph within each name neighborhood.
+
+Author identities are constructed via transitive closure:
+
+if A matches B, and B matches C → A, B, C belong to the same author cluster
+
+if no rule is satisfied → the block key remains a singleton cluster
+
+Each resulting connected component is assigned a stable identifier:
+
+author_cluster_id
+
+Outputs
+
+Two explicit artifacts are generated:
+
+Author–Block Mapping
+
+author_blockkey_cluster_map_n2.csv
+
+Maps each block_key to a single author_cluster_id
+
+Fully auditável and reversible
+
+Resolved Author Occurrences
+
+author_occurrences_enriched_n2_resolved.csv
+
+Original occurrence-level data, augmented with:
+
+author_cluster_id
+
+author_cluster_size
+
+No original data is removed or overwritten.
+
+Observed Impact (Sanity Check)
+
+From 430,312 author occurrences:
+
+~90% of block keys remain singletons
+
+~10% are merged via conservative coauthor evidence
+
+Large clusters are rare and interpretable
+
+This confirms that the resolution strategy reduces fragmentation without aggressive merging.
+
+Explicit Non-Goals (Reaffirmed)
+
+This stage deliberately does not:
+
+claim perfect author identity resolution
+
+resolve global homonyms
+
+use email, affiliation, ORCID, or text similarity
+
+apply probabilistic or ML-based disambiguation
+
+All such refinements remain optional future extensions.
+
+(2) Adicionar nova seção após “Current output (ready for BI / business use)”
+Final Consumption Mart — Author-Level (Auditável)
+
+Table: mart_leads_authors
+Grain: one row per author_cluster_id
+Purpose: canonical author-level dataset for BI exploration and lead generation.
+
+Construction Logic
+
+The mart is derived from author_occurrences_enriched_n2_resolved.csv by aggregating on:
+
+author_cluster_id
+
+Each row represents a practical author identity, suitable for ranking, filtering, and business decision-making.
+
+Key Fields
+
+author_cluster_id — analytical author identifier (primary key)
+
+canonical_author_name — most frequent raw author name (display / audit)
+
+n_articles — number of distinct PMIDs
+
+n_occurrences — total author–article occurrences
+
+author_cluster_size — number of block keys merged
+
+any_clinical / any_br_affiliation (if available)
+
+optional enrichment fields (e.g., email example, state example)
+
+Auditability and Traceability
+
+The mart is fully traceable:
+
+author_cluster_id
+→ block_key
+→ author_name_raw
+→ pmid
+→ original PubMed XML record
+
+No information loss occurs. The mart is a summary layer, not a destructive transformation.
+
+Decision
+
+mart_leads_authors is adopted as the single source of truth for:
+
+Power BI modeling
+
+lead prioritization
+
+business-facing analysis
+
+All filtering and threshold decisions are intentionally deferred to the BI layer to preserve flexibility and interpretability.
+
