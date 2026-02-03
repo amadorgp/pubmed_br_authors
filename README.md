@@ -1,8 +1,7 @@
 Ativação do ambiente:
 .venv\Scripts\activate
 
-Fluxo GIT
-
+Fluxo GIT:
 git status
 git add .
 git commit -m "Update data dictionary"
