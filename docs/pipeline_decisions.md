@@ -233,3 +233,108 @@ This table represents the canonical author-level data mart for BI consumption an
 ### Decision
 All prioritization logic is intentionally implemented as **categorical signals**, not filters.  
 Thresholds and final lead selection are deferred to the BI layer to preserve flexibility and traceability.
+
+## Stage N1 — Author Name Normalization (Non-Identitary)
+
+### Objective
+Introduce a conservative, non-identitary normalization layer for author names,
+enabling exploratory grouping and downstream heuristics without attempting
+author identity resolution.
+
+This stage is explicitly designed to:
+- preserve the original author name as published
+- avoid premature merging of homonyms
+- support exploratory analysis and prioritization logic
+
+---
+
+### Input
+Dataset:
+- `author_occurrences_enriched.csv`
+
+Key column:
+- `author_name_raw` (as extracted from PubMed)
+
+---
+
+### Normalization Strategy (Conservative by Design)
+
+The following transformations are applied:
+
+1. **ASCII normalization**
+   - Removal of diacritics (e.g., `José` → `Jose`)
+   - No other structural modification
+
+2. **Text standardization**
+   - Lowercasing
+   - Whitespace normalization
+   - Controlled removal of punctuation
+   - Hyphens normalized to spaces
+
+3. **PubMed-style name parsing**
+   Expected format:
+
+Parsed components:
+- `last_name_norm`
+- `first_name_norm`
+- `initials_norm` (derived from first letters of given names)
+
+4. **Block key generation (neighborhood only)**
+
+This key is used **only for neighborhood grouping**, not for identity.
+
+---
+
+### Explicit Non-Goals (Critical Design Constraints)
+
+This stage deliberately does **not**:
+- assign a unique author identifier
+- merge records across publications
+- resolve homonyms
+- enforce ORCID presence
+- override conflicting affiliations
+
+All such operations are deferred to later stages (e.g., N2), if needed.
+
+---
+
+### Quality Metrics (Observed)
+
+From 430,312 author occurrences:
+
+- Successful name parsing: **99.70%**
+- Parsing failures: **0.30%** (1,280 rows)
+- Non-null block keys: **99.70%**
+- Distinct block keys: **214,832**
+
+The most frequent block keys correspond to well-known international homonyms
+(e.g., `jones_l`, `lee_i`), confirming that the block key exposes name ambiguity
+rather than obscuring it.
+
+---
+
+### Rationale for Acceptance
+
+This stage was accepted as stable because:
+- parsing success exceeds typical bibliographic benchmarks
+- ambiguity is made explicit, not hidden
+- original data is fully preserved
+- the transformation is reversible and non-destructive
+
+The resulting columns are suitable for exploratory analysis, prioritization,
+and visualization, while remaining compatible with more advanced disambiguation
+strategies in future stages.
+
+---
+
+### Outputs (Added Columns)
+
+- `author_name_ascii`
+- `author_name_clean`
+- `last_name_norm`
+- `first_name_norm`
+- `initials_norm`
+- `block_key`
+- `name_parse_ok`
+
+These columns are considered **stable artifacts** of Stage N1.
