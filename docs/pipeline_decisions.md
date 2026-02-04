@@ -533,3 +533,36 @@ business-facing analysis
 
 All filtering and threshold decisions are intentionally deferred to the BI layer to preserve flexibility and interpretability.
 
+## Final State and Scope Freeze
+
+This document records the final, frozen state of the decision-making process for the PubMed BR Authors pipeline.
+
+At this stage, the pipeline is considered **complete, stable, and fit for purpose** with respect to its original objective: generating a qualified, auditable, and operationally usable list of Brazilian clinical authors for outreach and lead generation.
+
+### What Was Implemented
+
+The final pipeline includes:
+
+- A reproducible ingestion and normalization flow for PubMed data (2020–2024).
+- Author-level identity resolution using conservative block-key logic and co-author evidence.
+- Explicit acceptance of false negatives to preserve interpretability and robustness.
+- A conservative clinical heuristic based on explicit healthcare-related affiliations.
+- Lead prioritization (`P1–P4`) aligned with business relevance rather than academic completeness.
+- A final, versioned mart of authors suitable for downstream consumption.
+- Exported lead artifacts with full traceability (logs, manifests, and schema documentation).
+
+### Deliberate Exclusions
+
+The following were explicitly considered and **intentionally excluded** from this version:
+
+- Aggressive author identity resolution (e.g., probabilistic or ML-based disambiguation).
+- Automated validation of email ownership or correspondence authorship.
+- Inclusion of laboratories, institutes, or academic departments without explicit clinical signals.
+- External enrichment via web scraping or third-party services.
+- Campaign-specific or outreach-specific decision rules (e.g., filtering by publication count).
+
+These exclusions reflect a conscious trade-off favoring **precision, auditability, and operational reliability** over maximal recall or automation.
+
+### Versioning and Future Extensions
+
+Any extension of scope — such as relaxed clinical heuristics, email validation strategies, or campaign-level prioritization — is considered **out**

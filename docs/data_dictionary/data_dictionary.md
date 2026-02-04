@@ -1,6 +1,6 @@
 # Data Dictionary
 
-_Generated at: 2026-02-04 13:18:12_
+_Generated at: 2026-02-04 15:32:30_
 
 ## Datasets Summary
 
@@ -24,6 +24,7 @@ _Generated at: 2026-02-04 13:18:12_
 | author_occurrences_enriched_n2 | data/processed/author_occurrences_enriched_n2.csv | 430312 | 28 |
 | author_occurrences_enriched_n2_resolved | data/processed/author_occurrences_enriched_n2_resolved.csv | 430312 | 30 |
 | author_occurrences_unique | data/processed/author_occurrences_unique.csv | 430312 | 14 |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | 5100 | 13 |
 | mart_leads_authors | data/processed/mart_leads_authors.csv | 209468 | 12 |
 | mart_leads_authors__sources | data/processed/mart_leads_authors__sources.csv | 209467 | 3 |
 | mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | 209468 | 15 |
@@ -376,6 +377,24 @@ _Generated at: 2026-02-04 13:18:12_
 | author_occurrences_unique | data/processed/author_occurrences_unique.csv | author_position | int64 | ordinal | False | 697 | 0 | 0.0 |  |
 | author_occurrences_unique | data/processed/author_occurrences_unique.csv | pmid | int64 | primary_identifier | False | 49734 | 0 | 0.0 |  |
 | author_occurrences_unique | data/processed/author_occurrences_unique.csv | pub_year | int64 | temporal | False | 7 | 0 | 0.0 |  |
+
+## Dataset: `leads_p1_with_email`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | source_example | str | categorical | False | 1 | 0 | 0.0 |  |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | state_example | str | categorical | False | 27 | 0 | 0.0 |  |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | author_cluster_id | str | derived_identifier | False | 5100 | 0 | 0.0 |  |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | block_key_example | str | derived_text | False | 5100 | 0 | 0.0 |  |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | any_br_affiliation | bool | flag | False | 1 | 0 | 0.0 |  |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | any_clinical | bool | flag | False | 1 | 0 | 0.0 |  |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | canonical_author_name | str | free_text | False | 5100 | 0 | 0.0 |  |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | email_example | str | identifier_optional | False | 4911 | 0 | 0.0 |  |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | author_cluster_size | float64 | metric | False | 10 | 0 | 0.0 |  |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | n_articles | int64 | metric | False | 91 | 0 | 0.0 |  |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | n_articles_tier | str | metric | False | 4 | 0 | 0.0 |  |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | n_occurrences | int64 | metric | False | 91 | 0 | 0.0 |  |
+| leads_p1_with_email | data/processed/leads_p1_with_email.csv | lead_priority | str | unspecified | False | 1 | 0 | 0.0 |  |
 
 ## Dataset: `mart_leads_authors`
 

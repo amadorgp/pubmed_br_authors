@@ -67,9 +67,12 @@ data/processed/author_occurrences_enriched.csv
 data/processed/author_occurrences_enriched_n2.csv
 data/processed/author_occurrences_enriched_n2_resolved.csv
 data/processed/author_occurrences_unique.csv
+data/processed/leads_p1_with_email.csv
+data/processed/leads_p1_with_email_outreach.xlsx
 data/processed/mart_leads_authors.csv
 data/processed/mart_leads_authors__sources.csv
 data/processed/mart_leads_authors_v2.csv
+data/processed/~$leads_p1_with_email_outreach.xlsx
 data/raw/efetch_by_year/2020/20260127_210545_A1_v2_2020_2024_no_trials_EFETCH_BY_YEAR_batch_00000.xml
 data/raw/efetch_by_year/2020/20260127_210545_A1_v2_2020_2024_no_trials_EFETCH_BY_YEAR_batch_00001.xml
 data/raw/efetch_by_year/2020/20260127_210545_A1_v2_2020_2024_no_trials_EFETCH_BY_YEAR_batch_00002.xml
@@ -912,6 +915,7 @@ runs/logs/20260203_182232_21989ceb_99_resolve_block_keys_by_coauthors_n2.log
 runs/logs/20260203_183652_e55164ca_100_build_mart_leads_authors.log
 runs/logs/20260203_184220_675800e0_100_build_mart_leads_authors.log
 runs/logs/20260204_124237_a49e8a63_101_enrich_mart_leads_authors_priority.log
+runs/logs/20260204_145206_4b347323_export_leads_p1_with_email.log
 runs/manifests/20260127_175139_ENV_CHECK.json
 runs/manifests/20260127_181715_A_BUILDQUERY.json
 runs/manifests/20260127_193359_A1_v2_2020_2024_no_trials_BUILDQUERY.json
@@ -928,6 +932,7 @@ runs/manifests/20260203_162839_78aff079_98_build_author_coauthors_n2.json
 runs/manifests/20260203_182232_21989ceb_99_resolve_block_keys_by_coauthors_n2.json
 runs/manifests/20260203_184220_675800e0_100_build_mart_leads_authors.json
 runs/manifests/20260204_124237_a49e8a63_101_enrich_mart_leads_authors_priority.json
+runs/manifests/20260204_145206_4b347323_export_leads_p1_with_email.json
 runs/profiling/author_occurrences_enriched__profile.txt
 runs/profiling/names_n1__profile.txt
 runs/profiling/names_n1__samples__parse_fail.csv
@@ -945,6 +950,8 @@ src/04_parse_xml_to_csv_by_year.py
 src/05_merge_csvs.py
 src/100_build_mart_leads_authors.py
 src/101_enrich_mart_leads_authors_priority.py
+src/102_export_leads_p1_with_email.py
+src/103_build_outreach_workbook_p1.py
 src/90_validate_processed_csvs.py
 src/91_export_data_dictionary.py
 src/92_build_articles_unique.py
