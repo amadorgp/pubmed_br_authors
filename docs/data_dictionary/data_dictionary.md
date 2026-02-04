@@ -1,6 +1,6 @@
 # Data Dictionary
 
-_Generated at: 2026-02-03 19:03:59_
+_Generated at: 2026-02-04 13:18:12_
 
 ## Datasets Summary
 
@@ -26,6 +26,7 @@ _Generated at: 2026-02-03 19:03:59_
 | author_occurrences_unique | data/processed/author_occurrences_unique.csv | 430312 | 14 |
 | mart_leads_authors | data/processed/mart_leads_authors.csv | 209468 | 12 |
 | mart_leads_authors__sources | data/processed/mart_leads_authors__sources.csv | 209467 | 3 |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | 209468 | 15 |
 
 ## Dataset: `articles_2020`
 
@@ -400,4 +401,24 @@ _Generated at: 2026-02-03 19:03:59_
 | mart_leads_authors__sources | data/processed/mart_leads_authors__sources.csv | author_cluster_id | str | derived_identifier | False | 209467 | 0 | 0.0 |  |
 | mart_leads_authors__sources | data/processed/mart_leads_authors__sources.csv | source | str | governance | False | 1 | 0 | 0.0 |  |
 | mart_leads_authors__sources | data/processed/mart_leads_authors__sources.csv | n_articles_by_source | int64 | metric | False | 110 | 0 | 0.0 |  |
+
+## Dataset: `mart_leads_authors_v2`
+
+| dataset | rel_path | column_name | data_type | column_role | nullable | nunique | null_count | null_pct | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | source_example | str | categorical | False | 1 | 0 | 0.0 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | state_example | str | categorical | True | 27 | 91486 | 0.43675406267305744 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | author_cluster_id | str | derived_identifier | True | 209467 | 1 | 4.773998892432257e-06 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | block_key_example | str | derived_text | False | 209468 | 0 | 0.0 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | any_br_affiliation | bool | flag | False | 2 | 0 | 0.0 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | any_clinical | bool | flag | False | 2 | 0 | 0.0 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | any_clinical_num | int64 | flag | False | 2 | 0 | 0.0 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | any_email | bool | flag | False | 2 | 0 | 0.0 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | any_first_author | bool | flag | False | 2 | 0 | 0.0 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | canonical_author_name | str | free_text | False | 209468 | 0 | 0.0 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | email_example | str | identifier_optional | True | 22754 | 183964 | 0.8782439322474077 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | author_cluster_size | float64 | metric | True | 10 | 1 | 4.773998892432257e-06 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | n_articles | int64 | metric | False | 111 | 0 | 0.0 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | n_occurrences | int64 | metric | False | 110 | 0 | 0.0 |  |
+| mart_leads_authors_v2 | data/processed/mart_leads_authors_v2.csv | lead_priority | str | unspecified | False | 4 | 0 | 0.0 |  |
 

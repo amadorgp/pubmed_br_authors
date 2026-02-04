@@ -227,12 +227,19 @@ This classification is **descriptive**, not exclusionary, and is intended solely
 ### Output
 Final decision-ready table:
 - `mart_leads_authors`
-
 This table represents the canonical author-level data mart for BI consumption and business analysis.
 
 ### Decision
 All prioritization logic is intentionally implemented as **categorical signals**, not filters.  
 Thresholds and final lead selection are deferred to the BI layer to preserve flexibility and traceability.
+
+Clinical Heuristic — Conservative Design Choice
+
+The definition of “clinical author” adopted in this pipeline is intentionally conservative. An author is classified as clinical only when at least one of their affiliations explicitly contains healthcare-related keywords (e.g., hospital, clinic, medical center, médico, saúde), evaluated at the occurrence level and aggregated to the author level using an ANY rule.
+
+This design prioritizes precision over recall. Authors affiliated with laboratories, research institutes, or academic departments without explicit clinical keywords are deliberately excluded, even though some of them may be involved in applied or translational research. This choice reflects the project’s primary objective: building a practical lead generation tool, where false positives (non-clinical profiles incorrectly classified as clinical) are considered more costly than false negatives.
+
+More permissive heuristics — such as including laboratories or institutes — were evaluated conceptually but rejected for this version of the pipeline due to increased semantic ambiguity, higher risk of false positives, and significant scope expansion. Such extensions are considered out of scope for the current version and are explicitly reserved for future iterations under a separate, versioned clinical definition.
 
 ## Stage N1 — Author Name Normalization (Non-Identitary)
 
